@@ -1,0 +1,294 @@
+.hero {
+min-height: 100vh;
+padding: 0 8%;
+color: #f5f3f7;
+background:
+radial-gradient(
+ellipse at 78% 48%,
+rgba(112, 67, 164, 0.15),
+transparent 38%
+),
+#09090b;
+display: flex;
+flex-direction: column;
+position: relative;
+overflow: hidden;
+font-family: "Inter", sans-serif;
+}
+
+.hero-header {
+height: 90px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.hero-logo {
+color: #fff;
+text-decoration: none;
+font-size: 27px;
+font-weight: 700;
+letter-spacing: -2px;
+}
+
+.hero-logo span {
+color: #b99aff;
+}
+
+.hero-nav {
+display: flex;
+gap: 30px;
+}
+
+.hero-nav a,
+.hero-contact {
+color: #b9b6c0;
+text-decoration: none;
+font-size: 12px;
+transition: color 0.25s ease;
+}
+
+.hero-nav a:hover,
+.hero-contact:hover {
+color: #c5a8ff;
+}
+
+.hero-contact {
+color: #f5f3f7;
+}
+
+.hero-contact span {
+color: #c5a8ff;
+margin-left: 5px;
+}
+
+.hero-main {
+flex: 1;
+display: grid;
+grid-template-columns: 1.1fr 0.9fr;
+align-items: center;
+gap: 7%;
+padding: 55px 0;
+}
+
+.hero-text {
+position: relative;
+z-index: 2;
+}
+
+.hero-eyebrow {
+color: #b8a0df;
+font-size: 10px;
+letter-spacing: 3px;
+margin-bottom: 28px;
+}
+
+.hero-dot {
+display: inline-block;
+width: 6px;
+height: 6px;
+margin-right: 10px;
+border-radius: 50%;
+background: #b99aff;
+box-shadow: 0 0 12px #a47aff;
+}
+
+.hero-text h1 {
+font-size: clamp(65px, 8.5vw, 118px);
+line-height: 0.91;
+letter-spacing: -7px;
+font-weight: 500;
+margin: 0;
+}
+
+.hero-text h1 span {
+color: #bda1f4;
+}
+
+.hero-description {
+max-width: 370px;
+color: #aaa6b2;
+font-size: 14px;
+line-height: 1.9;
+margin: 28px 0;
+}
+
+.hero-buttons {
+display: flex;
+align-items: center;
+flex-wrap: wrap;
+gap: 25px;
+}
+
+.hero-primary {
+background: #f4efff;
+color: #17111f;
+padding: 14px 19px;
+border-radius: 3px;
+font-size: 12px;
+text-decoration: none;
+transition: background 0.25s, transform 0.25s;
+}
+
+.hero-primary:hover {
+background: #d8c4ff;
+transform: translateY(-2px);
+}
+
+.hero-primary span {
+margin-left: 12px;
+}
+
+.hero-secondary {
+color: #d0cbd7;
+font-size: 12px;
+text-decoration: none;
+}
+
+.hero-secondary span {
+color: #b99aff;
+margin-left: 8px;
+}
+
+.hero-location {
+margin-top: 60px;
+color: #77717f;
+font-size: 9px;
+letter-spacing: 2px;
+}
+
+.hero-location span {
+color: #b99aff;
+margin: 0 8px;
+}
+
+.hero-visual {
+position: relative;
+width: 100%;
+max-width: 430px;
+justify-self: end;
+}
+
+.hero-image-glow {
+position: absolute;
+width: 85%;
+height: 85%;
+left: 8%;
+top: 8%;
+background: #8152bb;
+filter: blur(85px);
+opacity: 0.2;
+border-radius: 50%;
+}
+
+.hero-image-frame {
+position: relative;
+height: clamp(340px, 43vw, 520px);
+overflow: hidden;
+background: #17141c;
+border: 1px solid rgba(199, 166, 255, 0.2);
+animation: hero-float 6s ease-in-out infinite;
+}
+
+.hero-image-frame img {
+display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center top;
+filter: saturate(0.82);
+}
+
+.hero-image-caption {
+display: flex;
+justify-content: space-between;
+gap: 12px;
+padding-top: 15px;
+color: #85808d;
+font-size: 8px;
+letter-spacing: 1.5px;
+}
+
+.hero-bottom {
+min-height: 55px;
+border-top: 1px solid rgba(255, 255, 255, 0.09);
+display: flex;
+align-items: center;
+justify-content: space-between;
+color: #77717f;
+font-size: 9px;
+letter-spacing: 2px;
+}
+
+.hero-bottom a {
+color: #aaa1b9;
+text-decoration: none;
+}
+
+@keyframes hero-float {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-8px);
+}
+}
+
+@media (max-width: 760px) {
+.hero {
+padding: 0 6%;
+}
+
+.hero-header {
+height: 75px;
+}
+
+.hero-nav {
+display: none;
+}
+
+.hero-main {
+grid-template-columns: 1fr;
+gap: 42px;
+padding: 55px 0 35px;
+}
+
+.hero-text h1 {
+font-size: clamp(68px, 16vw, 100px);
+letter-spacing: -4px;
+}
+
+.hero-description {
+max-width: 330px;
+}
+
+.hero-location {
+margin-top: 35px;
+}
+
+.hero-visual {
+width: 100%;
+max-width: 400px;
+justify-self: center;
+}
+
+.hero-image-frame {
+height: 420px;
+}
+
+.hero-bottom {
+font-size: 8px;
+letter-spacing: 1px;
+}
+}
+
+@media (prefers-reduced-motion: reduce) {
+.hero-image-frame {
+animation: none;
+}
+
+.hero-primary {
+transition: none;
+}
+}
