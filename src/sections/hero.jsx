@@ -1,83 +1,79 @@
 import "./hero.css";
 
+const links = [
+  { label: "WORKS", href: "#projects" },
+  { label: "ABOUT", href: "#about" },
+  { label: "CREATIVE", href: "#creative" },
+  { label: "CONTACT", href: "#contact" },
+];
+
 function Hero() {
-return (
-<section className="hero" id="home">
-<header className="hero-header">
-<a href="#home" className="hero-logo">
-AP<span>.</span>
-</a>
+  return (
+    <section className="hero" id="home">
+      <div className="hero-empty-space" />
 
-    <nav className="hero-nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#creative-works">Creative Works</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a href="#contact" className="hero-contact">
-      Let's talk <span>↗️</span>
-    </a>
-  </header>
-
-  <div className="hero-main">
-    <div className="hero-text">
-      <p className="hero-eyebrow">
-        <span className="hero-dot"></span>
-        DEVELOPER · CREATIVE THINKER
-      </p>
-
-      <h1>
-        Anjali
-        <br />
-        <span>Patel.</span>
-      </h1>
-
-      <p className="hero-description">
-        An aspiring developer who enjoys building
-        interactive websites and creative digital
-        experiences.
-      </p>
-
-      <div className="hero-buttons">
-        <a href="#projects" className="hero-primary">
-          Explore my work <span>↗️</span>
+      <header className="hero-header">
+        <a href="#home" className="hero-brand">
+          PORTFOLIO
         </a>
 
-        <a href="#about" className="hero-secondary">
-          A little about me <span>↓</span>
+        <nav className="hero-nav" aria-label="Main navigation">
+          {links.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <a className="hero-menu-link" href="#skills">
+          SKILLS <span>↘️</span>
         </a>
+      </header>
+
+      <div className="hero-title-area">
+        <h1>
+          ANJALI PATEL<span>.</span>
+        </h1>
+
+        <div className="hero-intro-row">
+          <p className="hero-intro">
+            An aspiring developer creating interactive
+            websites and exploring creative digital experiences.
+          </p>
+
+          <div className="hero-socials">
+            <a
+              href="https://github.com/AnjaliCodeee"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GITHUB ↗️
+            </a>
+            <a
+              href="https://linkedin.com/in/anjali-patel-dev67"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LINKEDIN ↗️
+            </a>
+          </div>
+        </div>
       </div>
 
-      <p className="hero-location">
-        BASED IN INDIA <span>·</span> OPEN TO LEARNING
-      </p>
-    </div>
-
-    <div className="hero-visual">
-      <div className="hero-image-glow"></div>
-
-      <div className="hero-image-frame">
+      <a href="#about" className="hero-image-link" aria-label="Explore portfolio">
         <img
+          className="hero-banner-image"
           src="/profile.jpg"
           alt="Portrait of Anjali Patel"
         />
+      </a>
+
+      <div className="hero-bottom">
+        <span>DEVELOPMENT · DESIGN · CURIOSITY</span>
+        <a href="#about">SCROLL TO EXPLORE ↓</a>
       </div>
-
-      <div className="hero-image-caption">
-        <span>THE PERSON BEHIND THE PIXELS</span>
-        <span>01 / 05</span>
-      </div>
-    </div>
-  </div>
-
-  <div className="hero-bottom">
-    <span>DESIGN WITH INTENTION.</span>
-    <a href="#about">SCROLL TO EXPLORE ↓</a>
-  </div>
-</section>
-
-);
+    </section>
+  );
 }
 
 export default Hero;
